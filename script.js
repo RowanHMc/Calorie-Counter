@@ -1,6 +1,13 @@
-const foodForm = document.getElementById("FoodForm");
-const foodName = document.getElementById("FoodName");
-const foodCalories = document.getElementById("FoodCalories");
-const foodList = document.getElementById("FoodList");
-const totalCalories = document.getElementById("TotalCalories");
-const resetBtn = document.getElementById("ResetBtn");
+const foodForm = document.getElementById("foodForm");
+const foodName = document.getElementById("foodName");
+const foodQuantity = document.getElementById("foodQuantity");
+const foodList = document.getElementById("foodList");
+const totalCalories = document.getElementById("totalCalories");
+const resetBtn = document.getElementById("resetBtn");
+
+let total = 0;
+
+foodForm.addEventListener("Submit", function(event){
+    event.preventDefault();
+    console.log("Form submitted")
+})
