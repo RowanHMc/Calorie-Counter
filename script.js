@@ -1,4 +1,3 @@
-console.log("JavaScript loaded");
 // const apiKEY ="WMSgzL3QyRAdM2X4gd7MIEj78Q4ORDrdB6e9ZyRL"
 // const baseURL = "https://api.nal.usda.gov/fdc/v1/foods/search";
 // async function getFoodData(foodName){
@@ -14,6 +13,8 @@ const resetBtn = document.getElementById("resetBtn");
 let total = 0;
 let meals= [];
 
+const savedMeals = localStorage.getItem("meals")
+
 if(savedMeals){
     meals = JSON.parse(savedMeals)
   }
@@ -26,7 +27,6 @@ foodForm.addEventListener("submit", (event) =>{
 
     const calories = 200;
 
-  const savedMeals = localStorage.getItem("meals")
   
   const meal = {
     food: foodName.value,
