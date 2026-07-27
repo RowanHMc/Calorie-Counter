@@ -1,7 +1,11 @@
-// const apiKEY ="WMSgzL3QyRAdM2X4gd7MIEj78Q4ORDrdB6e9ZyRL"
-// const baseURL = "https://api.nal.usda.gov/fdc/v1/foods/search";
-// async function getFoodData(foodName){
-// }
+const apiKEY ="WMSgzL3QyRAdM2X4gd7MIEj78Q4ORDrdB6e9ZyRL"
+const baseURL = "https://api.nal.usda.gov/fdc/v1/foods/search";
+async function getFoodData(foodName){
+    const response = await fetch(`${baseURL}?query=${foodName}&api_key=${apiKEY}`);
+    const data = await response.json();
+    console.log(data);
+    return data;     
+    }
 
 const foodForm = document.getElementById("foodForm");
 const foodName = document.getElementById("foodName");
@@ -19,10 +23,12 @@ if(savedMeals){
     meals = JSON.parse(savedMeals)
   }
 
+
 foodForm.addEventListener("submit", (event) =>{
     event.preventDefault();
     console.log("Form submitted")
     const name = foodName.value;
+    
     const quantity = foodQuantity.value
 
     const calories = 200;
@@ -45,7 +51,6 @@ foodForm.addEventListener("submit", (event) =>{
 
     localStorage.setItem("userName", "Rowan")
     console.log(localStorage.getItem("userName"));
-    typeof localStorage;
 
     foodList.addEventListener("click", (event) => {
         console.log(event.target)
